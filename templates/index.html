@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>flask</title>
+    <link href='https://fonts.googleapis.com/css?family=Pathway Gothic One' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Retrieve Stored Information</h1>
+
+    <form method="get" action="/">
+        <button type="submit">Get Info</button>
+    </form>
+
+    {% if data %}
+        <p><strong>Stored Data:</strong> {{ data }}</p>
+    {% endif %}
+</body>
+</html>
