@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Retrieve Stored Information</h1>
-
-    <!-- Form with button to trigger POST -->
-    <form method="post" action="/">
-        <button type="submit">Get Info</button>
+    <form method="POST">
+        <button type="submit">Get</button>
     </form>
 
     {% if data %}
-        <p><strong>Stored Data:</strong> {{ data }}</p>
+        <!--<p><strong>Stored Data:</strong> {{ data }}</p> -->
+        <p>{{ data }}</p>
     {% endif %}
 </body>
 </html>

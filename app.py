@@ -1,17 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Let's say this is our "stored information"
-stored_data = "who?"
+stored_data = None
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
+    global stored_data
+    if request.method == "POST":
+        stored_data = "WHO"
     return render_template("index.html", data=stored_data)
 
-#if __name__ == "__main__":
-    # Render needs host="0.0.0.0"
-    #app.run(host="0.0.0.0", port=5000, debug=True)
-
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
